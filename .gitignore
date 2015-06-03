@@ -1,13 +1,17 @@
+# Ignores for Cloud9, osx, eclipse, netbeans, and maven.
+.c9/
 .gradle
 .nb-gradle
 .settings
 .classpath
 .project
 .DS*
-SpringMVCB2.sublime-workspace 
-SpringMVCB2.sublime-project
 build
 build/
+data/
 private
 private/
+SpringMVCB2.sublime-workspace 
+SpringMVCB2.sublime-project
+target
 WebContent/
