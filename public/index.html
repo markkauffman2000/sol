@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>  
+
+    <link rel="stylesheet" type="text/css" href="/css/bookstore.css">
+    <script src="js/controller/bookController.js"></script>
+    <script src="js/service/bookService.js"></script>
+    <script src="js/bookstore.js"></script>
+  </head>
+  <body ng-app="bookstore">
+    <div ng-controller="bookController" ng-click="error={}" class="container section-div">
+      <div ng-include="'/template/breadcrumb.html'"/></div>
+      <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      <!-- 
+      <div ng-include="'/template/error.html'"></div>
+      -->
+      <div ng-include="'/template/menu.html'"></div>
+      <div ng-include="'/template/search-books.html'"></div>
+      <div ng-include="'/template/create-book.html'"></div>
+      <div ng-include="'/template/edit-book.html'"></div>
+    </div>
+  </body>
+</html>

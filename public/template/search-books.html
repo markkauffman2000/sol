@@ -1,0 +1,47 @@
+<div ng-show="view == 'showSearch'">
+  <div class="section-div">
+    <select ng-model="search.type">
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+      <option value="isbn">ISBN</option>
+    </select>
+    <input type="text" size="80" ng-model="search.term" ng-keypress="$event.keyCode == 13 ? searchBooks() : null"/>
+    <img ng-click="searchBooks()" ng-src="/image/magnifier-4-icon-128.png" alt="Search Books" class="search-button">
+  </div>
+
+  <div ng-if="books" class="section-div">
+    <table class="table table-striped">
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Title</th> 
+        <th>Author</th>
+        <th>ISBN</th> 
+        <th>Publication Date</th>
+        <th>Retail Price</th>
+      </tr>
+      <tr ng-repeat="book in books">
+        <td><img ng-click="selectBook(book._id)" ng-src="/image/pencil-9-icon-128.png" alt="Select Book" class="inline-button"></td>
+        <td><img ng-click="deleteBook(book._id)" ng-src="/image/x-mark-3-icon-128.png" alt="Delete Book" class="inline-button"></td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td> 
+        <td>{{book.isbn}}</td>
+        <td>{{book.publicationDate | date : 'MMMM dd, yyyy' }}</td> 
+        <td>{{book.price | currency : '$' : 2 }}</td> 
+      </tr>
+    </table>
+  </div>
+
+  <div ng-hide="books" class="section-div">
+    <table>
+      <tr>
+        <td><h2>We're sorry, we could not find the book(s) you were looking for...</h2></td>
+        <td><img ng-src="/image/smiley-sad-2-icon-128.png" alt="Book Not Found" class="inline-button"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="button-row">
+    <img ng-click="setView('showCreate')" ng-src="/image/plus-4-icon-128.png" alt="Add Book" class="action-button">
+  </div>
+</div>

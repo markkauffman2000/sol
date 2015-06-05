@@ -1,0 +1,17 @@
+<div ng-show="view == 'showDetails'">
+  <div class="section-div">
+    <p>Title: <input type="text" size="80" ng-model="book.title"/></p>
+    <p>Author: <input type="text" size="50" ng-model="book.author"/></p>
+    <p>ISBN: <input type="text" size="20" ng-model="book.isbn"/></p>
+    <p>Description: <input type="text" size="120" ng-model="book.description"/></p>
+    <p>Publication Date: <input type="date" size="25" ng-model="book.publicationDate" bb-date-format="YYYY-MM-DD"/></p>
+    <p>Retail Price: <input type="number" size="12" ng-model="book.price"/>
+      <span ng-if="book.price">({{ book.price | currency : '$' : 2}})</span>
+    </p>
+    <img ng-src="{{ book.image && book.image || ''}}" alt="Cover Image" class="cover-image">
+  </div>
+  <div class="button-row">
+    <img ng-click="editBook(); search.term = null;" ng-src="/image/save-2-icon-128.png" alt="Save" class="action-button">
+    <img ng-click="getBooks(); search.term = null;" ng-src="/image/undo-5-icon-128.png" alt="Close" class="action-button">
+  </div>
+</div>

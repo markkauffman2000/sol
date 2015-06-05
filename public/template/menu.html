@@ -1,0 +1,11 @@
+<div ng-show="view == 'showMenu'" class="jumbotron" style="border: 1px solid #CCCCCC;">
+  <table style="text-align: center;">
+    <tr>
+      <td colspan="2"><h1>Welcome to the Bookstore!</h1></td>
+    </tr>
+    <tr>
+      <td ng-click="searchBooks()"><img ng-src="/image/magnifier-4-icon-128.png" alt="Search Books" class="menu-button"><span class="h2" style="padding-left:5px">Search</span></td>
+      <td ng-click="setView('showCreate')"><img ng-src="/image/plus-4-icon-128.png" alt="Create Book" class="menu-button"><span class="h2" style="padding-left:15px">Add</span></td>
+    </tr>
+  </table>
+</div>
